@@ -1,0 +1,63 @@
+<!-- html boilerplate -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Snap Bug Chrome</title>
+    <style>
+        html {
+            scroll-snap-type: y mandatory;
+            --header-height: 6rem;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        header {
+            height: var(--header-height);
+            background: red;
+            font-size: 3rem;
+            position: sticky;
+            top: 0;
+        }
+        body main {
+            margin-top: calc(-1 * var(--header-height));
+        }
+        main div {
+            scroll-snap-align: start;
+            height: 100dvh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10rem;
+        }
+        main div:nth-child(odd) {
+            background-color: rgb(255, 150, 150);
+        }
+        main div:nth-child(even) {
+            background-color: rgb(255, 103, 103);
+        }
+
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>    
+    </main>
+</body>
+</html>
